@@ -1,0 +1,92 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    overflow: hidden;
+}
+.boxs {
+    margin-top: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 70px;
+}
+.box {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    background-color: #e4aa19;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #e6a60699;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    transition: all 0.5s ease-in-out;
+}
+.box:first-child:hover {
+    transform: rotate(360deg) scale(1.2);
+}
+.box:nth-child(2):hover {
+    transform: skew(-10deg, -10deg);
+}
+.box:nth-child(3):hover {
+    transform: scale(1.2) skew(10deg, 10deg);
+}
+.box:nth-child(4) {
+    transform: skew(-10deg);
+}
+.box:nth-child(4):hover {
+    transform: skew(10deg);
+    box-shadow: 0 0 20px #e6a706;
+}
+.box:nth-child(5) {
+    transform: skew(10deg, 5deg);
+}
+.box:nth-child(5):hover {
+    transform: skew(15deg, 30deg) translate(50px, -50px);
+    background-color: skyblue;
+}
+.box:last-child {
+    background-color: rgba(248, 27, 27, 0.896);
+}
+
+.box:last-child:hover::after {
+    transform: rotate(20deg);
+}
+
+.box:last-child:hover::before {
+    transform: rotate(-20deg);
+}
+.box:last-child::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(249, 121, 121, 0.896);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: -1;
+    transform: rotate(0);
+    transition: all 0.5s ease-in-out;
+}
+
+.box:last-child::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(249, 121, 121, 0.896);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: -1;
+    transform: rotate(0);
+    transition: all 0.5s ease-in-out;
+}
