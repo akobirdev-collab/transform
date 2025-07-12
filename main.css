@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 body{
-    overflow: hidden;
+    overflow-x: hidden;
 }
 .boxs {
     margin-top: 70px;
@@ -95,4 +95,51 @@ body{
     z-index: -1;
     transform: rotate(0);
     transition: all 0.5s ease-in-out;
+}
+section {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+
+.animated-box {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    background-color: #e4aa19;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #e6a60699;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    transition: all 0.5s ease-in-out;
+    animation: animated-box 5s infinite cubic-bezier(0.42, 0, 0.58, 1);
+    animation-delay: 2s;
+    animation-direction: alternate-reverse;
+    animation-fill-mode: both;
+}
+
+@keyframes animated-box {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    25% {
+        transform: translate(100px, 100px) scale(1.2) rotate(45deg);
+    }
+
+    50% {
+        transform: translate(200px, -100px) scale(0.8) rotate(90deg);
+    }
+
+    75% {
+        transform: translate(-100px, -200px) scale(1.5) rotate(135deg);
+    }
+
+    100% {
+        transform: translate(0, 0) scale(1) rotate(180deg);
+    } 
 }
